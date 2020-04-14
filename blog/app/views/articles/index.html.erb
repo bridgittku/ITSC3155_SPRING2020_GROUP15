@@ -17,10 +17,23 @@
       </td>
       <td><%= link_to 'Show', article_path(article) %></td>
       <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Destroy', 
+      <td class="destroy_button"><%= link_to 'Destroy', 
                                 article_path(article), 
                                 method: :delete,
                                 data: {confirm: 'Are you sure?'}%></td>
     </tr>
   <% end %>
 </table>
+
+<div>
+  <p></p>
+  <p></p>
+</div>
+
+<%= form_tag articles_path, :method => "get" do %>
+  <%= label_tag(:search, "Search For a Specific Article: (Please Use the Full Article Name!!!)") %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag("Search", :title => nil)%>
+<% end %>
+
+<%= link_to 'Full Article List', articles_path %>
