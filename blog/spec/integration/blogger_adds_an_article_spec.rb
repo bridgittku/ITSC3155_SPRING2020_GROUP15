@@ -12,6 +12,13 @@ feature"Blogger adds an article" do
     
     scenario "Blogger successfully creates a new article" do
         visit root_path
+        click_link "Sign Up"
+        fill_in "Name", with: "Bailee"
+        fill_in "Email", with: "bailee@example.com"
+        fill_in "Password", with: "bailee"
+        fill_in "Password confirmation", with: "bailee"
+        click_button "Create User"
+        visit root_path
         click_link "Log In"
         fill_in "Email", with: "bailee@example.com"
         fill_in "Password", with: "bailee"
