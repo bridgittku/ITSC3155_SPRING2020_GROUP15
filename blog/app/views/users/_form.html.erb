@@ -22,6 +22,18 @@
   </div>
 
   <div class="field">
+    <p>
+      Password Criteria:
+    </p>
+  <ul>
+    <li>At least 6 characters</li>
+    <li>At least 1 lowercase character (a-z)</li>
+    <li>At least 1 uppercase character (A-Z)</li>
+    <li>At least 1 numeric character (0-9)</li>
+    <li>At least 1 special character (!@#$%^&*)</li>
+
+  </ul>
+  
     <%= form.label :password %>
     <%= form.password_field :password %>
   </div>

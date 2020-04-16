@@ -3,6 +3,8 @@ class User < ApplicationRecord
     
     VALID_EMAIL_REGEX = /A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
     before_save { self.email = email.downcase }
+    VAILID_PASSWORD_REGEX = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/
+
     
     validates :name,
         presence: true,
@@ -16,7 +18,9 @@ class User < ApplicationRecord
         
     validates :password,
         presence: true,
-        length: { minimum: 6 }
+        length: { minimum: 6 },
+        format: {with: VAILID_PASSWORD_REGEX},
+        confirmation: true
         
     has_secure_password
 end
