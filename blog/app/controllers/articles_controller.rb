@@ -10,8 +10,13 @@ class ArticlesController < ApplicationController
         else
             @articles = Article.all
         end
+        if (params[:sort])
+        @articles = Article.order(:title)
     end
-    
+    end
+    def sort
+        @articles =Article.sort(params[:sort])
+    end
     def search
         @articles = Article.search(params[:search])
     end

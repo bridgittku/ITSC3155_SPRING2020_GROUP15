@@ -2,9 +2,9 @@
 <%= link_to 'New article', new_article_path %>
 <table>
   <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th>Author</th>
+    <th><%= sortable "Title", 'title'%></th>
+    <th><%="Text"%></th>
+    <th><%="Author"%></th>
   </tr>
  
   <% @articles.each do |article| %>
@@ -30,10 +30,13 @@
   <p></p>
 </div>
 
+
+
 <%= form_tag articles_path, :method => "get" do %>
   <%= label_tag(:search, "Search For a Specific Article: (Please Use the Full Article Name!!!)") %>
   <%= text_field_tag :search, params[:search] %>
   <%= submit_tag("Search", :title => nil)%>
 <% end %>
 
+<%= link_to 'sort', :sort=>"title"%> 
 <%= link_to 'Full Article List', articles_path %>
