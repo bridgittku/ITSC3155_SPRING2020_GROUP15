@@ -12,7 +12,13 @@ class ArticlesController < ApplicationController
         end
         if (params[:sort])
         @articles = Article.order(:title)
+        end
+        if (params[:timesort])
+            @articles = Article.sort_by(&:time_ago)
+        end
     end
+    def timesort
+        @articles=Article.order(params[:timesort])
     end
     def sort
         @articles =Article.sort(params[:sort])

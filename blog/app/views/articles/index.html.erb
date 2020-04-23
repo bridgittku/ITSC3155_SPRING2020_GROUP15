@@ -37,6 +37,7 @@
   <%= text_field_tag :search, params[:search] %>
   <%= submit_tag("Search", :title => nil)%>
 <% end %>
+<%= link_to 'Sort by Time', :timesort=>params[:id]%>
 
-<%= link_to 'sort', :sort=>"title"%> 
+<%= link_to 'Sort by Alphabet', :sort=>"title"%> 
 <%= link_to 'Full Article List', articles_path %>
