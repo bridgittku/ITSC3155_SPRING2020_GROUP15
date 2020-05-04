@@ -1,10 +1,25 @@
 <h1>Listing articles</h1>
-<%= link_to 'New article', new_article_path %>
+<div class = "topnav">
+  <a class = "active"></a>
+<li><%= link_to 'New article', new_article_path %></li>
+<li><%= link_to 'Sort by Time', :timesort=>params[:id]%></li>
+<li><%= link_to 'Sort by Alphabet', :sort=>"title"%></li>
+</div>
+<p></p>
+<p></p>
+<p1><%= form_tag articles_path, :method => "get" do %>
+  <%= label_tag(:search, "Search For a Specific Article: (Please Use the Full Article Name!!!)") %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag("Search", :title => nil)%>
+<% end %>
+</p1>
+  <p></p>
 <table>
   <tr>
-    <th><%= sortable "Title", 'title'%></th>
+    <th><%="Title"%></th>
     <th><%="Text"%></th>
     <th><%="Author"%></th>
+
   </tr>
  
   <% @articles.each do |article| %>
@@ -23,7 +38,7 @@
                                 data: {confirm: 'Are you sure?'}%></td>
     </tr>
   <% end %>
-</table>
+</table>`
 
 <div>
   <p></p>
@@ -31,13 +46,4 @@
 </div>
 
 
-
-<%= form_tag articles_path, :method => "get" do %>
-  <%= label_tag(:search, "Search For a Specific Article: (Please Use the Full Article Name!!!)") %>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag("Search", :title => nil)%>
-<% end %>
-<%= link_to 'Sort by Time', :timesort=>params[:id]%>
-
-<%= link_to 'Sort by Alphabet', :sort=>"title"%> 
 <%= link_to 'Full Article List', articles_path %>

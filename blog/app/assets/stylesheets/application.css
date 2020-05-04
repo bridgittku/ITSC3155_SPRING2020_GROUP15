@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+body{
+    background-color: #ddffff ;
+    color: black;
+}
+input[type=password] {
+    width: 70%;
+    padding: 12px 12px;
+    border: 2px solid #ccc;
+    background-color: #f8f8f8;
+}
+input[type=text] {
+    
+}
+h1 {
+    text-decoration: underline;
+    font-size: 35px;
+    color: navy;
+}
+li {
+    color: black;
+}
+div {
+  background-color: lightgray;
+  font: 40px;
+  height: 60px;
+}

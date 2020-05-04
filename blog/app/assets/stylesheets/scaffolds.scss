@@ -1,7 +1,7 @@
 body {
   background-color: #fff;
-  color: #333;
-  margin: 33px;
+  color: #000;
+  //margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -20,10 +20,10 @@ pre {
 }
 
 a {
-  color: #000;
+  color: #00f;
 
   &:visited {
-    color: #666;
+    color: #000fff;
   }
 
   &:hover {
@@ -42,7 +42,7 @@ td {
 
 div {
   &.field, &.actions {
-    margin-bottom: 10px;
+    margin-bottom: 10px
   }
 }
 
@@ -62,15 +62,16 @@ div {
   padding: 7px 7px 0;
   margin-bottom: 20px;
   background-color: #f0f0f0;
+  color: #000000;
 
   h2 {
-    text-align: left;
+    
     font-weight: bold;
     padding: 5px 5px 5px 15px;
     font-size: 12px;
     margin: -7px -7px 0;
-    background-color: #c00;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
   }
 
   ul li {
